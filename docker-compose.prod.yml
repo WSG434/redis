@@ -74,8 +74,16 @@ services:
     networks:
       - my-net
 
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - my-net
+
 networks:
   my-net:
     driver: bridge
     driver_opts:
       com.docker.network.driver.mtu: 1400
+
